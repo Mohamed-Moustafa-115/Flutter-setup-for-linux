@@ -20,6 +20,7 @@ flutter doctor
 cd Flutter\ IDE/
 echo "Downloading JDK 17.0.12"
 curl -# -O https://download.oracle.com/java/17/archive/jdk-17.0.12_linux-x64_bin.deb
+ls -l
 echo "Installing JDK 17.0.12 (Enter your sudo password)"
 sudo apt install ./jdk-17.0.12_linux-x64_bin.deb -y
 
