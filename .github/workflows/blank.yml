@@ -31,6 +31,10 @@ jobs:
 
       - name: List current directory
         run: ls -l
+
+      - name: Read input
+        run:  read -p "Do you want to keep Flutter Requirements folder (Setup packages) y/n " CHOICE
+
         
       # Run script
       - name: Run script
