@@ -47,12 +47,12 @@ while true; do
       # Interactive terminal
       read -p "Do you want to keep Flutter Requirements folder (Setup packages) y/n " CHOICE
   fi
-  if [ "$CHOICE" = "y" ] || [ "$CHOICE" = "Y" ]; then
+  if [ "$CHOICE" = "n" ] || [ "$CHOICE" = "N" ]; then
     rm -rf "Flutter Requirements"
     echo "Flutter Requirements folder is removed"
     echo "Setup finsihed, now run Andriod Studio to download the remaining SDK components"
     break
-  elif [ "$CHOICE" = "n" ] || [ "$CHOICE" = "N" ]; then
+  elif [ "$CHOICE" = "y" ] || [ "$CHOICE" = "Y" ]; then
     echo "Setup finsihed, now run Andriod Studio to download the remaining SDK components"
     break
   else
