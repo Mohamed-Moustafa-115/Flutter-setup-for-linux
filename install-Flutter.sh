@@ -38,7 +38,15 @@ tar -xzvf 'android-studio-panda2-linux.tar.gz' --checkpoint=.1000
 mv "android-studio" ../
 
 while true; do
-  read -p "Do you want to keep Flutter Requirements folder (Setup packages) y/n" CHOICE
+    # For GitHub Actions, use an environment variable
+  if [ -n "$GITHUB_ACTIONS" ]; then
+    # In GitHub Actions, skip prompt or use env var
+      CHOICE="${INPUT_KEEP_FOLDER:-n}"  # Use input variable or default to 'n'
+      echo "GitHub Actions detected, using: $CHOICE"
+  else
+      # Interactive terminal
+      read -p "Do you want to keep Flutter Requirements folder (Setup packages) y/n " CHOICE
+  fi
   if [ "$CHOICE" = "y" ] || [ "$CHOICE" = "Y" ]; then
     rm -rf "Flutter Requirements"
     echo "Flutter Requirements folder is removed"
