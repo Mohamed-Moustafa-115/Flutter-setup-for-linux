@@ -39,15 +39,15 @@ mv "android-studio" ../
 
 while true; do
   read -p "Do you want to keep Flutter Requirements folder (Setup packages) y/n" CHOICE
-  if [$CHOICE -eq "y"] || [$CHOICE -eq "Y"]; then
+  if [ $CHOICE == "y" ] || [ $CHOICE == "Y" ]; then
     rm -rf "Flutter Requirements"
     echo "Flutter Requirements folder is removed"
     echo "Setup finsihed, now run Andriod Studio to download the remaining SDK components"
     break
-  elif [$CHOICE -eq "n"] || [$CHOICE -eq "N"]; then
+  elif [ $CHOICE == "n" ] || [ $CHOICE == "N" ]; then
     echo "Setup finsihed, now run Andriod Studio to download the remaining SDK components"
     break
   else
   echo "Invalid input"
   fi
-  done
+done
