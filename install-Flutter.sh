@@ -18,7 +18,7 @@ source .bashrc
 flutter doctor
 
 #Download and install JDK 17.0.12
-cd Flutter\ IDE/
+cd "Flutter Requirements"
 echo "Downloading JDK 17.0.12"
 curl -# -O https://download.oracle.com/java/17/archive/jdk-17.0.12_linux-x64_bin.deb
 ls -l
@@ -39,12 +39,12 @@ mv "android-studio" ../
 
 while true; do
   read -p "Do you want to keep Flutter Requirements folder (Setup packages) y/n" CHOICE
-  if [ $CHOICE == "y" ] || [ $CHOICE == "Y" ]; then
+  if [ "$CHOICE" = "y" ] || [ "$CHOICE" = "Y" ]; then
     rm -rf "Flutter Requirements"
     echo "Flutter Requirements folder is removed"
     echo "Setup finsihed, now run Andriod Studio to download the remaining SDK components"
     break
-  elif [ $CHOICE == "n" ] || [ $CHOICE == "N" ]; then
+  elif [ "$CHOICE" = "n" ] || [ "$CHOICE" = "N" ]; then
     echo "Setup finsihed, now run Andriod Studio to download the remaining SDK components"
     break
   else
