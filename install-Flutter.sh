@@ -1,11 +1,12 @@
 #Get user's home directory
-read -p  "👤 Current home username: "    USER_NAME
+USER_NAME=$(whoami)
 cd /home/$USER_NAME
-mkdir "Flutter IDE"
+echo "Creating a directory for Flutter requirements"
+mkdir "Flutter Requirements"
 
 #Install required packages
-echo "Installing required packages"
-#sudo apt-get update -y && sudo apt-get upgrade -y
+echo "Updating and installing required packages"
+sudo apt-get update -y && sudo apt-get upgrade -y
 sudo apt-get install -y curl unzip xz-utils zip libglu1-mesa
 
 #Install FlutterSDK
@@ -30,6 +31,23 @@ curl -# -O https://vscode.download.prss.microsoft.com/dbazure/download/stable/61
 echo "Installing VS Code"
 sudo apt install ./code_1.110.1-1772839366_amd64.deb -y
 
-#Download Android studio
+#Download and install Android studio
 echo "Downloading Android studio"
 curl -# -O https://edgedl.me.gvt1.com/android/studio/ide-zips/2025.3.2.6/android-studio-panda2-linux.tar.gz
+tar -xzvf 'android-studio-panda2-linux.tar.gz' --checkpoint=.1000
+mv "android-studio" ../
+
+while true; do
+  read -p "Do you want to keep Flutter Requirements folder (Setup packages) y/n" CHOICE
+  if [$CHOICE -eq "y"] || [$CHOICE -eq "Y"] ; then
+    rm -rf "Flutter Requirements"
+    echo "Flutter Requirements folder is removed"
+    echo "Setup finsihed, now run Andriod Studio to download the remaining SDK components"
+    break
+  elif [$CHOICE -eq "n"] || [$CHOICE -eq "N"] ; then
+    echo "Setup finsihed, now run Andriod Studio to download the remaining SDK components"
+    break
+  else
+  echo "Invalid input"
+  fi
+  done
