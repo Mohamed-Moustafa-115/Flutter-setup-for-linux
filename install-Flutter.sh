@@ -27,14 +27,14 @@ sudo apt install ./jdk-17.0.12_linux-x64_bin.deb -y
 
 #Download VS Code
 echo "Downloading VS Code"
-curl -# -O https://vscode.download.prss.microsoft.com/dbazure/download/stable/61b3d0ab13be7dda2389f1d3e60a119c7f660cc3/code_1.110.1-1772839366_amd64.deb
+curl -# -O https://vscode.download.prss.microsoft.com/dbazure/download/stable/6928394f91b684055b873eecb8bc281365131f1c/code_1.124.2-1781225536_amd64.deb
 echo "Installing VS Code"
-sudo apt install ./code_1.110.1-1772839366_amd64.deb -y
+sudo apt install ./code_1.124.2-1781225536_amd64.deb -y
 
 #Download and install Android studio
 echo "Downloading Android studio"
-curl -# -O https://edgedl.me.gvt1.com/android/studio/ide-zips/2025.3.2.6/android-studio-panda2-linux.tar.gz
-tar -xzvf 'android-studio-panda2-linux.tar.gz' --checkpoint=.1000
+curl -# -O https://edgedl.me.gvt1.com/android/studio/ide-zips/2026.1.1.9/android-studio-quail1-patch1-linux.tar.gz
+tar -xzvf 'android-studio-quail1-patch1-linux.tar.gz' --checkpoint=.1000
 mv "android-studio" ../
 cd ../
 
